@@ -11,6 +11,8 @@ int registro() // funcao responsavel por cadastrar os usuarios no sistema
 	char nome[40];
 	char sobrenome[40];
 	char cargo[40];
+	int opcao = 0;
+	int laco = 1;
 	//final da criacao de variaveis 
 	
 	printf("Digite o CPF a ser cadastrado: "); // coletando informacao do usuario
@@ -58,6 +60,35 @@ int registro() // funcao responsavel por cadastrar os usuarios no sistema
 	
 	system("pause");
 	
+	
+	while (laco == 1) 
+	{
+        system("cls");
+        
+        printf("Deseja fazer um novo registro?\n\n");
+        printf("1- Fazer novo registro\n");
+        printf("2- Voltar ao menu principal\n\n");
+        scanf("%d", &opcao);
+        
+        
+        switch (opcao) 
+		{
+            case 1:
+                registro();
+                break;
+            case 2:
+                return 0;
+                break;
+            default:
+                printf("Esta opção não está disponível!\n\n");
+                system("pause");
+                break;
+        }
+    }
+    
+    return 0;
+	
+
 }
 
 int consulta()
